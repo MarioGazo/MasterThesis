@@ -35,7 +35,7 @@ def measure_Gen(sec: int, E: int):
     """ Runs the key pair generation function N times and measures its speed """
     T: float = timeit(lambda: ES.Gen(sec, 1, E, 1), number=N) / N
 
-    return round(T, 1)
+    return round(T, P)
 
 
 def measure_Gen_SEC():
@@ -55,7 +55,7 @@ def measure_Sign(sec: int, m: str, e: int):
 
     T: float = timeit(lambda: ES.Sign(SK, m), number=N) / N
 
-    return round(T, 2)
+    return round(T, P)
 
 
 def measure_Sign_SEC():
@@ -80,7 +80,7 @@ def measure_Verify(sec: int, m: str, e: int):
     SIG = ES.Sign(SK, m)
     T: float = timeit(lambda: ES.Verify(PK, 1, SIG, m, check_expired=False), number=N) / N
 
-    return round(T, 2)
+    return round(T, P)
 
 
 def measure_Verify_SEC():

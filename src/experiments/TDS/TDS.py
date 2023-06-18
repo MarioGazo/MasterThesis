@@ -62,7 +62,7 @@ def measure_Sign_N():
         T: float = 0.0
         for t in timestamps:
             T += timeit(lambda: TDS.Sign(SK, m, t), number=N) / N
-        T_avg.append(round(T / TIMESTAMP_COUNT, 1))
+        T_avg.append(round(T / TIMESTAMP_COUNT, P))
     plot(BASE, T_avg, TitleTDS.Sign, Parameters.N, Results.Time)
 
 
@@ -70,7 +70,7 @@ def measure_Gen(pair: str, T: int) -> float:
     """ Runs the key generation function N times and measures its speed """
     T_avg: float = timeit(lambda: TDS.Gen(SEC_TLP, T_TLP, pair, BASE_N, T), number=N) / N
 
-    return round(T_avg, 1)
+    return round(T_avg, P)
 
 
 def measure_Gen_SEC():
@@ -89,7 +89,7 @@ def measure_Sign(pair: str, m: str, t: int) -> float:
 
     T_avg: float = timeit(lambda: TDS.Sign(SK, m, t), number=N) / N
 
-    return round(T_avg, 1)
+    return round(T_avg, P)
 
 
 def measure_Sign_SEC():
@@ -140,7 +140,7 @@ def measure_AltSign(pair, m: str, t: int) -> float:
 
     T_avg: float = timeit(lambda: TDS.AltSign(VK, (m, t_v, SIG), m, t), number=N) / N
 
-    return round(T_avg, 1)
+    return round(T_avg, P)
 
 
 def measure_AltSign_SEC():
