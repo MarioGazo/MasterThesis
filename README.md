@@ -1,5 +1,5 @@
 ### Master Thesis Spring 2023 at DTU 
-Analysing and comparing of short-lived data authentication protocols 
+Analyzing and Comparing Short-Lived Data Authentication Protocols
 
 #### Author
 - Mário Gažo (s212687@student.dtu.dk)
